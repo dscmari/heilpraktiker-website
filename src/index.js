@@ -9,7 +9,7 @@ import ScrollToTop from "./helpers/ScrollToTop";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/heilpraktiker-website"  >
 
       <ScrollToTop />
       <App />
