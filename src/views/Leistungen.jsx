@@ -54,6 +54,8 @@ const Section = styled.section`
 
 const Text = styled.p`
 
+  padding: 1rem;
+  margin-top: 0;
 
   @media(min-width: 860px){
     width: 80%;
@@ -63,20 +65,33 @@ const Text = styled.p`
 `
 
 const MobileHeader = styled.div`
-    background-color: #00949d;
-    color: white;
-    text-align: center;
-    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-left: 1rem;
+
+    span{
+      display: block;
+      width: 40px;
+      height: 5px;
+      border-radius: 9px;
+      background-color: #00949d;
+    }
+    h2{
+      font-weight: 500;
+    }
 `
+
+
 
 ;
 
 function Leistungen() {
 
-  const [isMobileHeader, setIsMobileHeader] = useState(false)
+  const [isDesktopHeader, setIsDesktopHeader] = useState(false)
 
   const handleResize = () => {
-    setIsMobileHeader(prevstate => !prevstate)
+    setIsDesktopHeader(window.innerWidth >= 860);
   }
 
   window.addEventListener('resize', handleResize)
@@ -88,13 +103,14 @@ function Leistungen() {
     <Container>
       <Section>
            <>
-      {(window.innerWidth >= 860 || !isMobileHeader)? (
+      {(window.innerWidth >= 860 || isDesktopHeader)? (
         <HalfCircle id="id">
           <OuterText style={{ top: "50%", left: "100%" }}>Diagnose</OuterText>
         </HalfCircle>
       ) : (
         <MobileHeader>
-          <h1>Diagnose</h1>
+          <span></span>
+          <h2>Diagnose</h2>
         </MobileHeader>
       )}
     </>
@@ -120,6 +136,14 @@ function Leistungen() {
         </Text>
       </Section>
       <Section style={{marginLeft:"0"}}>
+        
+        {(window.innerWidth < 860 && !isDesktopHeader) &&
+            <MobileHeader>
+                <span></span>
+                <h2>Therapie</h2>
+            </MobileHeader>
+        }
+      
         <Text>
           Entdecken Sie die vielfältigen natürlichen Heilmethoden und Therapien,
           die wir anbieten, um Ihre Gesundheit und Ihr Wohlbefinden zu fördern.
@@ -143,14 +167,25 @@ function Leistungen() {
           abgestimmten Phytotherapie, um Ihre Gesundheit auf natürliche Weise zu
           unterstützen.
         </Text>
-        <HalfCircle style={{transform:"translateX(50%)"}}>
-          <OuterText style={{ top: "50%", left: "0" }}>Therapie</OuterText>
-        </HalfCircle>
+        {(window.innerWidth >= 860 || isDesktopHeader) &&
+            <HalfCircle style={{transform:"translateX(50%)"}}>
+              <OuterText style={{ top: "50%", left: "0" }}>Therapie</OuterText>
+            </HalfCircle>
+        }
+        
       </Section>
       <Section>
-        <HalfCircle>
-          <OuterText style={{ top: "50%", left: "100%" }}>Training</OuterText>
-        </HalfCircle>
+      {(window.innerWidth >= 860 || isDesktopHeader)? (
+          <HalfCircle>
+              <OuterText style={{ top: "50%", left: "100%" }}>Training</OuterText>
+          </HalfCircle>
+      ) : (
+        <MobileHeader>
+            <span></span>
+            <h2>Training</h2>
+        </MobileHeader>
+      )}
+       
         <Text>
           Entdecken Sie unsere maßgeschneiderten Trainingsangebote, um Ihre
           Fitnessziele zu erreichen und Ihre Leistungsfähigkeit zu steigern.
@@ -166,6 +201,12 @@ function Leistungen() {
         </Text>
       </Section>
       <Section id="prevention" style={{marginLeft:"0"}}>
+        {(window.innerWidth < 860 && !isDesktopHeader) &&
+            <MobileHeader>
+                <span></span>
+                <h2>Prävention</h2>
+            </MobileHeader>
+        }
         <Text>
           Entdecken Sie unsere vielfältigen Angebote im Bereich Prävention, um
           Ihre langfristige Gesundheit und Lebensqualität zu fördern. Mit
@@ -180,9 +221,12 @@ function Leistungen() {
           und Wohlbefinden. Vereinbaren Sie noch heute einen Termin und
           investieren Sie in Ihre langfristige Gesundheit!
         </Text>
-        <HalfCircle style={{transform:"translateX(50%)"}}>
-          <OuterText style={{ top: "50%", left: "0" }}>Prävention</OuterText>
-        </HalfCircle>
+        {(window.innerWidth >= 860 || isDesktopHeader) &&
+            <HalfCircle style={{transform:"translateX(50%)"}}>
+                <OuterText style={{ top: "50%", left: "0" }}>Prävention</OuterText>
+            </HalfCircle>
+        }
+       
       </Section>
     </Container>
   );
