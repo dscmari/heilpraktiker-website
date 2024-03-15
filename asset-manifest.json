@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/heilpraktiker-website/static/css/main.4400e845.css",
-    "main.js": "/heilpraktiker-website/static/js/main.27d0a7d5.js",
+    "main.css": "/heilpraktiker-website/static/css/main.6e2ae127.css",
+    "main.js": "/heilpraktiker-website/static/js/main.a3498698.js",
     "static/js/453.8bc2b713.chunk.js": "/heilpraktiker-website/static/js/453.8bc2b713.chunk.js",
     "static/media/logo_dummy.png": "/heilpraktiker-website/static/media/logo_dummy.cb7c612a5846c6335569.png",
     "static/media/avatar.webp": "/heilpraktiker-website/static/media/avatar.732e2bf4e25128cb5cda.webp",
     "index.html": "/heilpraktiker-website/index.html",
-    "main.4400e845.css.map": "/heilpraktiker-website/static/css/main.4400e845.css.map",
-    "main.27d0a7d5.js.map": "/heilpraktiker-website/static/js/main.27d0a7d5.js.map",
+    "main.6e2ae127.css.map": "/heilpraktiker-website/static/css/main.6e2ae127.css.map",
+    "main.a3498698.js.map": "/heilpraktiker-website/static/js/main.a3498698.js.map",
     "453.8bc2b713.chunk.js.map": "/heilpraktiker-website/static/js/453.8bc2b713.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4400e845.css",
-    "static/js/main.27d0a7d5.js"
+    "static/css/main.6e2ae127.css",
+    "static/js/main.a3498698.js"
   ]
 }
