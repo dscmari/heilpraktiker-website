@@ -1,9 +1,14 @@
 import styled from "styled-components";
+import { useState } from "react";
 
 const Container = styled.main`
-  position: relative;
-  width: 80%;
-  overflow: hidden;
+
+  @media(min-width: 860px){
+    position: relative;
+    width: 80%;
+    overflow: hidden;
+  }
+
 `;
 
 const HalfCircle = styled.div`
@@ -20,6 +25,7 @@ const HalfCircle = styled.div`
     border-radius: inherit;
     background: white;
   }
+
 `;
 
 const OuterText = styled.div`
@@ -37,23 +43,61 @@ const OuterText = styled.div`
 `;
 
 const Section = styled.section`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin: 2rem;
+
+  @media(min-width: 860px){
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 2rem;
+  }
 `;
 
 const Text = styled.p`
-  width: 80%;
-`;
+
+
+  @media(min-width: 860px){
+    width: 80%;
+    margin: 0;
+  }
+  
+`
+
+const MobileHeader = styled.div`
+    background-color: #00949d;
+    color: white;
+    text-align: center;
+    padding: 0.5rem;
+`
+
+;
 
 function Leistungen() {
+
+  const [isMobileHeader, setIsMobileHeader] = useState(false)
+
+  const handleResize = () => {
+    setIsMobileHeader(prevstate => !prevstate)
+  }
+
+  window.addEventListener('resize', handleResize)
+
+
+  
+
   return (
     <Container>
       <Section>
+           <>
+      {(window.innerWidth >= 860 || !isMobileHeader)? (
         <HalfCircle id="id">
           <OuterText style={{ top: "50%", left: "100%" }}>Diagnose</OuterText>
         </HalfCircle>
+      ) : (
+        <MobileHeader>
+          <h1>Diagnose</h1>
+        </MobileHeader>
+      )}
+    </>
         <Text>
           Erfahren Sie mehr über unsere umfassenden Diagnosemethoden, die es uns
           ermöglichen, Ihre Gesundheit ganzheitlich zu erfassen und individuelle
