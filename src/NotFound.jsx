@@ -6,13 +6,11 @@ function NotFound() {
             <p>Oops! Dieser Navigationspunkt wurde noch nicht erstellt.</p>
             <p>Erstellte Navigationspunkte:</p>
             <div>
-            <Link to='/'>Home</Link>
+                <Link to='/'>Home</Link>
             </div>
             <div>
-            <Link to='/leistungen'>Leistungen</Link>
-            </div>
-           
-         
+                <Link to='/leistungen'>Leistungen</Link>
+            </div>       
         </div>
     )
 }

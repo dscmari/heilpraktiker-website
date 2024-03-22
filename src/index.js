@@ -10,7 +10,6 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <StrictMode>
     <BrowserRouter basename="/heilpraktiker-website"  >
-
       <ScrollToTop />
       <App />
     </BrowserRouter>

@@ -9,8 +9,7 @@ import NotFound from "./NotFound";
 function App() {
   return (
     <div className="app">
-      <header className="app-header">
-      
+      <header className="app-header">   
         <Navbar></Navbar>
       </header>
       <Routes>
@@ -18,7 +17,6 @@ function App() {
         <Route path="/leistungen" element={<Leistungen />} />
         <Route path='*' element={<NotFound />}/>
       </Routes>
-
       <Footer></Footer>
     </div>
   );
