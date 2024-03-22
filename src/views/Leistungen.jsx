@@ -108,10 +108,14 @@ function Leistungen() {
           <OuterText style={{ top: "50%", left: "100%" }}>Diagnose</OuterText>
         </HalfCircle>
       ) : (
-        <MobileHeader>
-          <span></span>
-          <h2>Diagnose</h2>
-        </MobileHeader>
+        <div>
+          <h1 style={{padding:"1rem", fontWeight:"500", textDecoration:"underline"}}>Leistungen</h1>
+          <MobileHeader>
+            <span></span>
+            <h2>Diagnose</h2>
+          </MobileHeader>
+        </div>
+    
       )}
     </>
         <Text>

@@ -167,8 +167,8 @@ function Navbar(){
             
             {/* TODO
                 preventScrollReset anstatt helper function um zum seitenanfang zu navigieren (https://medium.com/@alexanie_/link-component-in-react-router-6872291bf78e)*/}
-   {((window.innerWidth >= 860 || showDesktopMenu) || showMobileMenu) && (
-        <Navigation>
+        {((window.innerWidth >= 860 || showDesktopMenu) || showMobileMenu) && (
+        <Navigation onClick={toggleMenu}>
           <NavLink to="/">Home</NavLink>
           <NavLink to="/leistungen">Leistungen</NavLink>
           <NavLink to="/praxis">Praxis</NavLink>
@@ -176,7 +176,7 @@ function Navbar(){
           <NavLink to="/bewertungen">Bewertungen</NavLink>
           <NavLink to="/kontakt">Kontakt</NavLink>
         </Navigation>
-      )}
+        )}
         </Container>
     );
 }

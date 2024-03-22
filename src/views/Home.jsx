@@ -2,7 +2,12 @@ import styled from "styled-components";
 import Circle from "../components/Circle";
 import portrait from "../assets/imgs/avatar.webp" 
 
+
 const Main = styled.main`
+
+  h1{
+    color: #00949d;
+  }
 
   @media (min-width: 860px) {
     display: flex;
@@ -32,19 +37,14 @@ const ImgContainer = styled.div`
   }
 `
 
-const WelcomeText = styled.div`
-    @media (min-width: 860px) {
-  
-  }
-`
-
 
 function Home() {
   return (
-    <Main>
+    <Main>  
         <Intro>
-          <ImgContainer>
+          <ImgContainer>       
             <p>
+              <h1>PRAXIS MUSTERMANN</h1>
               Herzlich willkommen in meiner Praxis für Naturheilkunde! Als
               Heilpraktiker verfolge ich einen ganzheitlichen Ansatz für Ihre
               Gesundheit und Ihr Wohlbefinden. Das bedeutet, dass ich nicht nur
