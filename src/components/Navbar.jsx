@@ -154,7 +154,7 @@ function Navbar(){
 
     return (
         <Container>
-            <NavigationHeader style={{display:"flex", justifyContent: "space-between"}}>
+            <NavigationHeader>
                 <Link className="nav-header-item" to="/">
                     <img src={logo_dummy} alt="logo" style={{ height: "15vh" }} />
                 </Link>
@@ -166,17 +166,18 @@ function Navbar(){
             </NavigationHeader>
             
             {/* TODO
-                preventScrollReset anstatt helper function um zum seitenanfang zu navigieren (https://medium.com/@alexanie_/link-component-in-react-router-6872291bf78e)*/}
-        {((window.innerWidth >= 860 || showDesktopMenu) || showMobileMenu) && (
-        <Navigation onClick={toggleMenu}>
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="/leistungen">Leistungen</NavLink>
-          <NavLink to="/praxis">Praxis</NavLink>
-          <NavLink to="/ueber-mich">Über mich</NavLink>
-          <NavLink to="/bewertungen">Bewertungen</NavLink>
-          <NavLink to="/kontakt">Kontakt</NavLink>
-        </Navigation>
-        )}
+                preventScrollReset anstatt helper function um zum seitenanfang zu navigieren 
+                (https://medium.com/@alexanie_/link-component-in-react-router-6872291bf78e)*/}
+            {((window.innerWidth >= 860 || showDesktopMenu) || showMobileMenu) && (
+            <Navigation onClick={toggleMenu}>
+              <NavLink to="/">Home</NavLink>
+              <NavLink to="/leistungen">Leistungen</NavLink>
+              <NavLink to="/praxis">Praxis</NavLink>
+              <NavLink to="/ueber-mich">Über mich</NavLink>
+              <NavLink to="/bewertungen">Bewertungen</NavLink>
+              <NavLink to="/kontakt">Kontakt</NavLink>
+            </Navigation>
+            )}
         </Container>
     );
 }
